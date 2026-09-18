@@ -1,0 +1,330 @@
+/* Sweet Crumbs Bakery - Part 2
+   External stylesheet for desktop, tablet and mobile layouts.
+*/
+
+/* ---------- CSS Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a2c2a;
+    background-color: #fff8f5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+/* ---------- General Layout ---------- */
+.container,
+main,
+header,
+footer {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    padding: 1.25rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #f3c6c0;
+    transform: translateY(-2px);
+}
+
+nav a:active {
+    transform: translateY(0);
+}
+
+main {
+    padding: 2rem 0;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.6rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* ---------- Cards / Product Layout ---------- */
+.products,
+.product-list,
+.cards,
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.card,
+.product,
+.product-card,
+article {
+    padding: 1.25rem;
+    background-color: #ffffff;
+    border: 1px solid #ead8d3;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.9rem rgba(74, 44, 42, 0.08);
+}
+
+.card:hover,
+.product:hover,
+.product-card:hover,
+article:hover {
+    box-shadow: 0 0.45rem 1.1rem rgba(74, 44, 42, 0.14);
+}
+
+/* ---------- Images ---------- */
+.product img,
+.product-card img,
+.card img,
+article img {
+    width: 100%;
+    border-radius: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+/* ---------- Buttons ---------- */
+button,
+input[type="submit"],
+input[type="reset"],
+.button {
+    border: none;
+    padding: 0.75rem 1.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+.button:hover,
+button:focus,
+input[type="submit"]:focus,
+input[type="reset"]:focus {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* ---------- Forms ---------- */
+form {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid #ead8d3;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    background-color: #ffffff;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cdbbb6;
+    border-radius: 0.45rem;
+    font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid rgba(243, 198, 192, 0.65);
+    border-color: #b97970;
+}
+
+/* ---------- Tables ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: #ffffff;
+}
+
+th,
+td {
+    padding: 0.8rem;
+    border: 1px solid #ead8d3;
+    text-align: left;
+}
+
+th {
+    font-weight: 700;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ---------- Accessibility ---------- */
+:focus-visible {
+    outline: 3px solid #7b4f49;
+    outline-offset: 2px;
+}
+
+/* ---------- Responsive Design: Tablet ---------- */
+@media (max-width: 900px) {
+    .products,
+    .product-list,
+    .cards,
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main {
+        padding-top: 1.5rem;
+    }
+
+    header,
+    footer,
+    main,
+    .container {
+        width: 92%;
+    }
+}
+
+/* ---------- Responsive Design: Mobile ---------- */
+@media (max-width: 600px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.25rem;
+    }
+
+    nav li,
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        width: 94%;
+        padding: 1rem 0;
+    }
+
+    .products,
+    .product-list,
+    .cards,
+    .card-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card,
+    .product,
+    .product-card,
+    article {
+        padding: 1rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    fieldset {
+        padding: 1rem;
+    }
+
+    .profile-image {
+        width: 130px;
+        height: 130px;
+    }
+}
